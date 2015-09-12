@@ -9,6 +9,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+     if params[:owner] = 0
+       @user[:owner] = true
+     else
+      @user[:owner] = false
+     end
     if @user.save
       redirect_to restaurants_path, notice: "Signed up!"
     else
@@ -18,6 +23,6 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :phone_num)
   end
 end

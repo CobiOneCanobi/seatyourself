@@ -11,6 +11,8 @@ class ReservationsController < ApplicationController
 
     if @reservation.save
       redirect_to restaurants_path, notice: "Successfully made reservation"
+    else
+      render :new
   end
 
   def destroy
@@ -28,5 +30,10 @@ class ReservationsController < ApplicationController
 
   def show #might not use
     @reservation = Reservation.find(params[:id])
+  end
+
+  private
+  def reservation_params
+    params.require(:reservation).permit(:party_size, :time_slot)
   end
 end

@@ -1,6 +1,10 @@
 class RestaurantsController < ApplicationController
   def new
-    @restaurant = Restaurant.new
+    if current_user.owner
+      @restaurant = Restaurant.new
+    else
+      redirect_to restaurants_path
+    end
   end
 
   def create
@@ -25,7 +29,12 @@ class RestaurantsController < ApplicationController
   end
 
   def edit
-    @restaurant = Restaurant.find(params[:id])
+    if current_user.owner
+      @restaurant = Restaurant.find(params[:id])
+    else
+      redirect_to restaurants_path
+    end
+
   end
 
   def destroy

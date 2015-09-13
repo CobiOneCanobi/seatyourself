@@ -1,6 +1,6 @@
 class RestaurantsController < ApplicationController
   def new
-    if current_user.owner
+    if current_user.owner == 0
       @restaurant = Restaurant.new
     else
       redirect_to restaurants_path
@@ -9,6 +9,7 @@ class RestaurantsController < ApplicationController
 
   def create
     @restaurant = Restaurant.create(restaurant_params)
+    @restaurant.owner_id = current_user.id
 
     if @restaurant.save
       redirect_to restaurants_path
@@ -49,6 +50,14 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.find(params[:id])
+  end
+
+  def mine
+    if current_user.owner == 0
+     @restaurants = Restaurant.where(owner_id: current_user.id )
+   else
+    redirect_to restaurants_path
+   end
   end
 
   private

@@ -1,11 +1,11 @@
 <h1><%= @restaurant.name %></h1>
 
   <div class="restaurant">
-    <p><%= @restaurant.summary %></p>
+    <p>Description: <%= @restaurant.summary %></p>
     <p><%= @restaurant.category %></p>
-    <p><%= @restaurant.address %></p>
-    <p><%= @restaurant.hours_of_operation %></p>
-    <p><%= @restaurant.price_range %></p>
-    <p><%= @restaurant.phone_num %></p>
-    <%= link_to "Make Reservation", '/reservations/new'%>
+    <p>Address: <%= @restaurant.address %></p>
+    <p>Hours of Operation: <%= @restaurant.hours_of_operation %></p>
+    <p>Average Price: <%= @restaurant.price_range %></p>
+    <p>Phone Number: <%= @restaurant.phone_num %></p>
+    <%= link_to "Make Reservation", new_restaurant_reservation_path(@restaurant.id)%>
   </div>

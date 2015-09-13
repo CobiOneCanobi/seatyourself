@@ -1,7 +1,7 @@
 <h1>Restaurants (<%= @restaurants.length %>)</h1>
 <% if current_user %>
   <% if current_user.owner == 0 %>
-    <%= link_to "Add a Restaurant", "/restaurants/new" %>
+    <%= link_to "Add a Restaurant", "/restaurants/new" %> | <%= link_to "View the Reservations at My Restaurant's ", "/myrestaurants" %>
     <% end %>
 <% end %>
 

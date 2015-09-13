@@ -1,0 +1,5 @@
+<h1>Click One of Your Restaurants to See the List of Reservations </h1>
+
+<% @restaurants.each do |restaurant| %>
+  <p><%= link_to restaurant.name, restaurant_reservations_path(restaurant.id) %></p>
+<% end %>

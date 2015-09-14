@@ -33,8 +33,9 @@
   </div>
 
   <div class="field">
-    <%= f.label :category %><br />
-    <%= f.text_field :category %>
+    <%= f.label :category_id, "Category" %><br />
+    <%= f.select :category_id, Category.all.collect { |c| [ c.name, c.id ] }, include_blank: false %>
+    <!-- map and collect seem to do the same thing. c.name is being used as the name that is being displayed in the dropdown, c.id is the value that is returned when submitting form -->
   </div>
 
   <div class="field">

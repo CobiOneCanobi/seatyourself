@@ -11,10 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150912204704) do
+ActiveRecord::Schema.define(version: 20150914182432) do
 
   create_table "categories", force: :cascade do |t|
-    t.string   "type"
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -36,12 +36,12 @@ ActiveRecord::Schema.define(version: 20150912204704) do
     t.integer  "owner_id"
     t.string   "address"
     t.string   "price_range"
-    t.string   "category"
     t.string   "hours_of_operation"
     t.integer  "phone_num"
     t.text     "summary"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+    t.integer  "category_id"
   end
 
   add_index "restaurants", ["owner_id"], name: "index_restaurants_on_owner_id"

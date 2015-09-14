@@ -1,3 +1,9 @@
+#still left: remove unused routes, add validations and callbacks to models, implement categories, implement front end
+
+
+
+
+
 class ReservationsController < ApplicationController
   before_filter :load_restaurant, :ensure_logged_in
 

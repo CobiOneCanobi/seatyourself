@@ -1,4 +1,4 @@
-<h1><%= @restaurant.name %></h1>
+<center><h1><%= @restaurant.name %></h1>
 
   <div class="restaurant">
     <p>Description: <%= @restaurant.summary %></p>
@@ -8,4 +8,4 @@
     <p>Average Price: <%= @restaurant.price_range %></p>
     <p>Phone Number: <%= @restaurant.phone_num %></p>
     <%= link_to "Make Reservation", new_restaurant_reservation_path(@restaurant.id)%>
-  </div>
+  </div></center>

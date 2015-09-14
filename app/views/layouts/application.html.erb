@@ -15,7 +15,7 @@
     <p id="alert"><%= flash[:alert] %></p>
   <% end %>
 
-  <nav>
+  <nav><center>
     <%= link_to "Restaurants", restaurants_path %> |
     <% if current_user %>
       <%= link_to "View Reservations", restaurant_reservations_path(1) %> |
@@ -23,17 +23,18 @@
         <%= link_to "Add a Restaurant", "/restaurants/new" %> | <%= link_to "View the Reservations at My Restaurant's ", "/myrestaurants" %>
       <% end %>
     <% end %>
+    </center>
   </nav>
 
   <%= yield %>
 
-    <p class="userinfo">
+    <center><p class="userinfo">
     <% if current_user %>
     Signed in as <%= current_user.email %>. <%=link_to "Log out", session_path("current"), :method => :delete %>
     <% else %>
       <%= link_to "Log in", new_session_path %> or <%= link_to "Sign up", new_user_path %>
     <% end %>
-  </p>
+  </p></center>
 
 </body>
 </html>

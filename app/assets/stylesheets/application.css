@@ -15,6 +15,48 @@
  */
 
 body {
-  background-color: lightblue;
+  background-color: white;
 }
 
+.mainseatyourself {
+  font-family: "Courier New", Courier, monospace;
+  border: 2px solid;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 300px;
+  margin-right: 300px;
+  background-image: url('https://scontent.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/11028036_10200884453789250_7652568658461345824_n.jpg?oh=4224657baa89a65c28e29e332c8590ad&oe=566CF3BB');
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+
+h1 {
+  font-family: ‘Palatino Linotype’, ‘Book Antiqua’, Palatino, serif;
+  border: 2px solid;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 300px;
+  margin-right: 300px;
+
+}
+
+.restaurant {
+  border: 2px solid;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 300px;
+  margin-right: 300px;
+
+}
+
+nav {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 11px;
+}

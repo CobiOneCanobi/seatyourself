@@ -54,7 +54,7 @@ class RestaurantsController < ApplicationController
 
   def mine
     if current_user.owner == 0
-     @restaurants = current_user.restaurants
+     @restaurants = current_user.owned_restaurants
    else
     redirect_to restaurants_path
    end

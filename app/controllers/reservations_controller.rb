@@ -1,4 +1,4 @@
-#still left: remove unused routes, add validations and callbacks to models, implement categories, implement front end
+#still left: remove unused routes, add validations and callbacks to models, implement front end
 
 
 

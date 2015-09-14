@@ -19,21 +19,25 @@ class ReservationsController < ApplicationController
   end
 
   def destroy
+    @reservation = Reservation.find(params[:id])
     @reservation.destroy
-    redirect_to
+    redirect_to restaurant_reservations_path(@restaurant.id)
   end
 
   def index
     if current_user.owner == 0
-      @reservations = current_user.owned_restaurants.reservations #may need to add nested resources
+       @reservations = @restaurant.reservations
     else
       @reservations = current_user.reservations
     end
   end
 
   # def show #might not use
-  #   @reservation = Reservation.find(params[:id])
+  #   if current_user.owner == 0
+  #     @reservations = @restaurant.reservations
+  #   end
   # end
+
   def load_restaurant
     @restaurant = Restaurant.find(params[:restaurant_id])
   end

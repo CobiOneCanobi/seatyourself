@@ -1,12 +1,8 @@
-<h1>Restaurants (<%= @restaurants.length %>)</h1>
-<% if current_user %>
-  <% if current_user.owner == 0 %>
-    <%= link_to "Add a Restaurant", "/restaurants/new" %> | <%= link_to "View the Reservations at My Restaurant's ", "/myrestaurants" %>
-    <% end %>
-<% end %>
+<h1>Seat Yourself</h1>
+<p>SeatYourself is an online restaurant booking service which allows you to find and discover restaurants.</p></br>
 
+<h2>All Restaurants (<%= @restaurants.length %>)</h2>
 <% @restaurants.each do |restaurant| %>
-
   <div class="restaurant">
     <p><%= link_to restaurant.name, restaurant_path(restaurant.id) %></p>
     <p><%= word_wrap(restaurant.summary.first(50), line_width: 20) %></p>

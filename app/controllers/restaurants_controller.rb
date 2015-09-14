@@ -54,7 +54,7 @@ class RestaurantsController < ApplicationController
 
   def mine
     if current_user.owner == 0
-     @restaurants = Restaurant.where(owner_id: current_user.id )
+     @restaurants = current_user.restaurants
    else
     redirect_to restaurants_path
    end

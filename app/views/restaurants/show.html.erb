@@ -2,10 +2,11 @@
 
   <div class="restaurant">
     <p>Description: <%= @restaurant.summary %></p>
-    <p><%= @restaurant.category %></p>
+    <p>Category: <%= @restaurant.category.name %></p>
     <p>Address: <%= @restaurant.address %></p>
     <p>Hours of Operation: <%= @restaurant.hours_of_operation %></p>
     <p>Average Price: <%= @restaurant.price_range %></p>
     <p>Phone Number: <%= @restaurant.phone_num %></p>
-    <%= link_to "Make Reservation", new_restaurant_reservation_path(@restaurant.id)%>
+    <p><%= link_to "Make Reservation", new_restaurant_reservation_path(@restaurant.id)%></p>
+    </br>
   </div>

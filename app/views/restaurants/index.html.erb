@@ -4,10 +4,10 @@
 <h2>All Restaurants (<%= @restaurants.length %>)</h2>
 <% @restaurants.each do |restaurant| %>
   <div class="restaurant">
-    <p><%= link_to restaurant.name, restaurant_path(restaurant.id) %></p>
-    <p><%= word_wrap(restaurant.summary.first(50), line_width: 20) %></p>
-    <p><%= restaurant.category %></p>
-    <p><%= restaurant.address %></p>
+    <p>Name: <%= link_to restaurant.name, restaurant_path(restaurant.id) %></p>
+    <p>Short Summary: <%= word_wrap(restaurant.summary.first(50), line_width: 20) %></p>
+    <p>Category: <%= restaurant.category.name %></p>
+    <p>Address: <%= restaurant.address %></p>
     </br></br>
   </div>
 <% end %>

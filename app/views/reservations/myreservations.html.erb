@@ -1,0 +1,11 @@
+<h1>My Reservations</h1>
+
+  <div class="reservation">
+    <% @reservations.each do |reservation| %>
+      <p>Restaurant: <%= reservation.restaurant.name %></p>
+      <p>Time Slot: <%= reservation.time_slot  %></p>
+      <p>Party Size: <%= reservation.party_size %></p>
+      <p><%= link_to "Delete", restaurant_reservation_path(reservation.restaurant.id, reservation.id), method: :delete %></p>
+      </br></br>
+    <% end %>
+  </div>

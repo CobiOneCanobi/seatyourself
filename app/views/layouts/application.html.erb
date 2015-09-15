@@ -18,7 +18,7 @@
   <nav>
     <%= link_to "Restaurants", restaurants_path %>
     <% if current_user %>
-       | <%= link_to "View Reservations", restaurant_reservations_path(1) %>
+      |<%= link_to "View Reservations", myreservations_path %>
       <% if current_user.owner == 0 %>
         | <%= link_to "Add a Restaurant", "/restaurants/new" %> | <%= link_to "View the Reservations at My Restaurant's ", "/myrestaurants" %>
       <% end %>

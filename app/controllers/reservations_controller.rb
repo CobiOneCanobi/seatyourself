@@ -1,11 +1,9 @@
-#still left: remove unused routes, add validations and callbacks to models, implement front end
-
-
-
-
-
 class ReservationsController < ApplicationController
-  before_filter :load_restaurant, :ensure_logged_in
+  before_filter :ensure_logged_in, :load_restaurant, except: ['myreservations']
+
+  def myreservations
+    @reservations = current_user.reservations
+  end
 
   def new
       @reservation = Reservation.new
@@ -13,7 +11,7 @@ class ReservationsController < ApplicationController
 
 
   def create
-    @reservation = Reservation.create(reservation_params)
+    @reservation = Reservation.new(reservation_params)
     @reservation.user = current_user
     @reservation.restaurant = @restaurant
 
@@ -27,7 +25,7 @@ class ReservationsController < ApplicationController
   def destroy
     @reservation = Reservation.find(params[:id])
     @reservation.destroy
-    redirect_to restaurant_reservations_path(@restaurant.id)
+    redirect_to restaurants_path
   end
 
   def index

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get '/myrestaurants', to: 'restaurants#mine'
+  get '/myreservations', to: 'reservations#myreservations'
 
   resources :restaurants do
     resources :reservations, only: [:new, :create, :destroy, :index, :show]
@@ -13,7 +14,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'restaurants#index'
+  root 'restaurant#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
